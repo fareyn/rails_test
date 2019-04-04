@@ -1,0 +1,45 @@
+<h1>Sucursal: <%= @sucursal.nsuc %></h1>
+<h2><strong>Informacion de la Sucursal:</h2>
+<p>
+    <strong>Calle: </strong> <%= @sucursal.ncalle %><br />
+   <strong>Colonia: </strong> <%= @sucursal.ncol %><br />
+   <strong>Numero Exterior:</strong> <%= @sucursal.numext %><br />
+   <strong>Numero Interior:</strong> <%= @sucursal.numint %><br />
+   <strong>Codigo Postal:</strong> <%= @sucursal.cpost %><br />
+   <strong>Ciudad:</strong> <%= @sucursal.ciudad %><br />
+   <strong>Pais:</strong> <%= @sucursal.pais %><br />
+</p>
+<p> <%= link_to 'Edit', {:action => "edit",:id => @sucursal.id} %></p>
+<p> <%= link_to 'Back', empresa_show_path(id: @empresa.id) %></p>
+   
+
+<hr />
+<div class="col-md-8">
+    <% if @sucursal.empleados.any? %>
+    <h3>Empleados de la Sucursal</h3>
+        <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nombre del Empleado</th>
+                <th scope="col">RFC</th>
+                <th scope="col">Puesto</th>
+            </tr>
+        </thead>
+ 
+        <tbody>
+            <% @empleados.each do |empleado| %>
+             <tr>
+                <td><%= empleado.nemp %></td>
+                <td><%= empleado.rfc %></td>
+                <td><%= empleado.npuesto %></td>
+                <td><%= link_to "Show",empleado_show_path(rfc: empleado.rfc) %></td>
+                <td><%= link_to "Edit", empleado_edit_path(rfc: empleado.rfc) %></td>
+            </tr>
+            <% end %>
+        </tbody>
+        </table>
+    <% else %>
+      <h3>No hay empleados para esta Sucursal</h3>
+    <% end %>
+</div>
+

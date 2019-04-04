@@ -1,0 +1,6 @@
+<li id="empleado-<%= empleado.nemp %>">
+    <p> Nombre de la sucursal: <%= sucursal.nsuc %> </p>
+    <p>Empleados en la sucursal: <%= sucursal.empleados.count %> </p>
+    <p><%= link_to "Detalles Empleado",empleado_show_path(rfc: empleado.rfc) %> </p>
+    <p><%= link_to "Editar Empleado",empleado_edit_path(rfc: empleado.rfc) %> </p>
+</li>

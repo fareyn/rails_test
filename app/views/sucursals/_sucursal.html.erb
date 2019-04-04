@@ -1,0 +1,6 @@
+<li id="sucursal-<%= sucursal.id %>">
+    <p> Nombre de la sucursal: <%= sucursal.nsuc %> </p>
+    <p>Empleados en la sucursal: <%= sucursal.empleados.count %> </p>
+    <p><%= link_to "Detalles Sucursal/ Ver Empleados",sucursal_show_path(id: sucursal.id) %> </p>
+    <p><%= link_to "Editar Sucursal",sucursal_edit_path(id: sucursal.id) %> </p>
+</li>

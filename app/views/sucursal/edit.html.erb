@@ -1,0 +1,19 @@
+<% provide(:title, 'Edit') %>
+<h1>Editar una Sucursal</h1>
+
+<%= form_for @sucursal, :url =>{:action => "update", :id =>@sucursal} do |f| %>
+ <%= render 'shared/err_msgs_suc' %>
+<p class="hidden">Empresa Id: <%= f.text_field 'empresa_id', class: 'form-control hidden' %></p>
+<p>Nombre de la Sucursal: <%= f.text_field 'nsuc', class: 'form-control' %></p>
+<p>Calle: <%= f.text_field 'ncalle', class: 'form-control' %></p>
+<p>Colonia: <%= f.text_field 'ncol', class: 'form-control' %></p>
+<p>Numero Exterior: <%= f.text_field 'numext', class: 'form-control' %></p>
+<p>Numero Interior: <%= f.text_field 'numint', class: 'form-control' %></p>
+<p>Codigo Postal: <%= f.text_field 'cpost', class: 'form-control' %></p>
+<p>Ciudad: <%= f.text_field 'ciudad', class: 'form-control' %></p>
+<p>Pais: <%= f.text_field 'pais', class: 'form-control' %></p>
+<br>
+<%= f.submit "Save changes", class: "btn btn-primary" %>
+<% end %>
+
+<%= link_to 'Back', {:action => 'show', :id => @sucursal.id} %>

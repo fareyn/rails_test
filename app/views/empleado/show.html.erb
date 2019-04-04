@@ -1,0 +1,13 @@
+<% provide(:title, 'Detalles Empleado') %>
+<h2><strong>Informacion del Empleado:</h2>
+<p>
+    <strong>Nombre: </strong> <%= @empleado.nemp %><br />
+    <strong>Sucursal: </strong> <%= @sucursal.nsuc %><br />
+   <strong>RFC: </strong> <%= @empleado.rfc %><br />
+   <strong>nombre del puesto:</strong> <%= @empleado.npuesto %><br />
+</p>
+<p> <%= link_to 'Edit', {:action => "edit",:rfc => @empleado.rfc} %></p>
+<p> <%= link_to 'Back', empresa_show_path(id: @empresa.id) %></p>
+   
+
+<hr />

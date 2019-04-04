@@ -1,0 +1,24 @@
+<h1>Empresa: <%= @empresa.nombre %></h1>
+<h2><strong>Informacion del usuario:</h2>
+<p>
+    <strong>Dueno de la empresa: </strong> <%= @empresa.nomdueno %><br />
+   <strong>RFC: </strong> <%= @empresa.rfc %><br />
+   <strong>e-mail :</strong> <%= @empresa.correo %><br />
+</p>
+<p> <%= link_to 'Edit', {:action => "edit",:id => @empresa.id} %></p>
+   <p> <%= link_to "Delete", {:action => 'delete', :id => @empresa.id},
+      :confirm => "Are you sure you want to delete this item?" %></p>
+
+<hr />
+
+<div class="col-md-8">
+    <% if @empresa.sucursals.any? %>
+      <h3>Sucursales de la empresa</h3>
+      <ol class="sucursals">
+        <%= render @sucursals %>
+      </ol>
+      <%= will_paginate @sucursals %>
+      <% else %>
+      <h3>No hay Sucursales Listadas para esta empresa</h3>
+    <% end %>
+  </div>

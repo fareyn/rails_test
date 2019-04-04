@@ -1,0 +1,13 @@
+<% provide(:title, 'Edit') %>
+<h1>Edit Empresa Detail</h1>
+
+<%= form_for @empresa, :url =>{:action => "update", :id =>@empresa} do |f| %>
+
+<p>Correo: <%= f.text_field 'correo' %></p>
+<p>Nombre del dueno: <%= f.text_field 'nomdueno' %></p>
+<p>Nombre de la empresa: <%= f.text_field 'nombre' %></p>
+<br>
+<%= f.submit "Save changes" %>
+<% end %>
+
+<%= link_to 'Back', {:action => 'show', :id => @empresa.id} %>

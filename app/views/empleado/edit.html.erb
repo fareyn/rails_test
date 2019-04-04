@@ -1,0 +1,14 @@
+<% provide(:title, 'Edit') %>
+<h1>Editar Empleado</h1>
+
+<%= form_for @empleado, :url =>{:action => "update", :rfc =>@empleado} do |f| %>
+ <%= render 'shared/err_emp' %>
+<p>Sucursal: <%= f.collection_select :sucursal_id, @sucursals, :id, :nsuc %></p>
+<p>Nombre: <%= f.text_field 'nemp', class: 'form-control' %></p>
+<p>RFC: <%= f.text_field 'rfc', class: 'form-control' %></p>
+<p>Nombre del Puesto: <%= f.text_field 'npuesto', class: 'form-control' %></p>
+<br>
+<%= f.submit "Save changes", class: "btn btn-primary" %>
+<% end %>
+
+<%= link_to 'Back', {:action => 'show', :rfc => @empleado.rfc} %>

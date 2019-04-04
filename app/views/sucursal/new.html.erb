@@ -1,0 +1,46 @@
+<% provide(:title, 'Add new Sucursal') %>
+<h1>Añadir Nueva Sucursal</h1>
+
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+
+<%= form_tag :action => 'create' do %>
+ <%= render 'shared/err_msgs_suc' %>
+<p><label for = "sucursal_empresa_id">ID Empresa</label>:
+
+<%= text_field 'sucursal', 'empresa_id', class: 'form-control' %></p>
+<p><label for = "sucursal_nsuc">Nombre de Sucursal</label>:
+
+<%= text_field 'sucursal', 'nsuc' ,class: 'form-control' %></p>
+<p><label for = "sucursal_ncalle">Calle</label>:
+
+<%= text_field 'sucursal', 'ncalle', class: 'form-control' %></p>
+<p><label for = "sucursal_ncol">Colonia</label><br/>
+
+<%= text_area 'sucursal', 'ncol', class: 'form-control' %></p>
+<p><label for = "sucursal_numext">Numero Exterior</label><br/>
+
+<%= text_field 'sucursal', 'numext', class: 'form-control' %></p>
+<p><label for = "sucursal_numint">Numero Interior</label><br/>
+
+<%= text_field 'sucursal', 'numint', class: 'form-control' %></p>
+
+<p><label for = "sucursal_cpost">Codigo Postal</label><br/>
+
+<%= text_field 'sucursal', 'cpost', class: 'form-control' %></p>
+
+<p><label for = "sucursal_ciudad">Ciudad</label><br/>
+
+<%= text_field 'sucursal', 'ciudad', class: 'form-control' %></p>
+
+<p><label for = "sucursal_pais">Pais</label><br/>
+
+<%= text_field 'sucursal', 'pais', class: 'form-control' %></p>
+
+<%= submit_tag "Create", class: "btn btn-primary"%>
+
+<% end -%>
+<%= link_to 'Back', root_path %>
+
+</div>
+</div>
